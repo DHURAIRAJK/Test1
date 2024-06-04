@@ -48,13 +48,13 @@ jobs:
     #    echo "QUALITY=$quality" >> $env:GITHUB_ENV
 
     - name: Create pull request
-      if: github.ref == 'refs/heads/SIT'
+      if: github.ref == 'refs/heads/master'
       uses: peter-evans/create-pull-request@v3
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
-        branch: SIT
+        branch: master
         base: main
-        title: 'SIT to main PR'
+        title: 'master to main PR'
         body: 'Auto-generated PR from SIT branch'
 
    # - name: Deploy if quality is above 75%
